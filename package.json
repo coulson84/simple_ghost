@@ -1,0 +1,11 @@
+{
+  "name": "piksel_c",
+  "version": "0.0.0",
+  "description": "Piksel Technical Challenge",
+  "main": "./server/server.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Joe Coulson",
+  "license": "ISC"
+}
