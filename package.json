@@ -4,7 +4,7 @@
   "description": "Piksel Technical Challenge",
   "main": "./server/server.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "make test"
   },
   "author": "Joe Coulson",
   "license": "ISC",
@@ -12,6 +12,9 @@
     "express": "^4.10.4",
     "grunt": "^0.4.5",
     "grunt-contrib-connect": "^0.9.0",
-    "grunt-contrib-jshint": "^0.10.0"
+    "grunt-contrib-jshint": "^0.10.0",
+    "mocha": "^2.0.1",
+    "should": "^4.3.1",
+    "sinon": "^1.12.1"
   }
 }
