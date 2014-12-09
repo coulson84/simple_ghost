@@ -1,2 +1,3 @@
 node_modules
 *.sublime*
+server/words/list.json
