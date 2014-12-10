@@ -6,42 +6,27 @@ module.exports = function(grunt) {
             all: ['Gruntfile.js', 'server/**']
         },
 
-        connect: {
-            unit: {
-                options: {
-                    port: 8080,
-                    hostname: 'localhost'
-                }
-            },
-            hang: {
-                options: {
-                    port: 8080,
-                    hostname: 'localhost',
-                    keepalive: true
-                }
-            }
-        },
-
-        'mocha-chai-sinon': {
-            unit: {
-                src: ['./tests/*.spec.js'],
-                options: {
-                    ui: 'bdd',
-                    reporter: 'spec'
-                }
-            }
-        },
-
         processWords: {
             main: {
                 src: ['./details/word.lst'],
                 dest: './server/words/list.json'
+            },
+            test: {
+                src: ['./details/word.lst'],
+                dest: './test/files/list.json'
+            }
+        },
+
+        uglify: {
+            main: {
+                src: ['js/*'],
+                dest: './public/js/all.js'
             }
         }
 
     });
 
-    grunt.registerTask('test', ['mocha-chai-sinon:unit'])
+    grunt.registerTask('init', ['processWords','jshint','uglify:main']);
 
     for (var key in grunt.file.readJSON("package.json").devDependencies) {
         if (key !== "grunt" && key.indexOf("grunt") === 0) {
