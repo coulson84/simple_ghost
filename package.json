@@ -4,7 +4,8 @@
   "description": "Piksel Technical Challenge",
   "main": "./server/server.js",
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "start": "node ./server/main.js"
   },
   "author": "Joe Coulson",
   "license": "ISC",

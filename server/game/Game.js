@@ -1,4 +1,4 @@
-var Picker = require('./words/Picker');
+var Picker = require('../words/Picker');
 
 (function(){
 	var picker;
