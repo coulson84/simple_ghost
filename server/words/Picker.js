@@ -19,7 +19,7 @@ var utils = require('util');
 			o.emit('ready');
 
 		});
-	};
+	}
 
 	utils.inherits(Picker, EventEmitter);
 
@@ -31,7 +31,7 @@ var utils = require('util');
 	 */
 	Picker.prototype.nextLetter = function(str) {
 		if(!str) {
-			return
+			return;
 		}
 		var options = this.fetchMatches(str);
 		var returned = {};
@@ -70,7 +70,7 @@ var utils = require('util');
 				return branch;
 			}
 			return descend(i + 1, branch[str[i]]);
-		}
+		};
 
 		if (str) {
 			return descend(0, words);

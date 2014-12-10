@@ -1,5 +1,6 @@
-var Server = require('./Server.js');
-var Picker = require('./words/Picker.js');
+var Server = require('./Server');
+var Picker = require('./words/Picker');
+var Game = require('./game/Game');
 
 (function() {
 
@@ -8,8 +9,8 @@ var Picker = require('./words/Picker.js');
 		this.init = function() {
 			var server = new Server(8001);
 			server.start();
-		}
+		};
 	};
 
 	module.exports = App;
-}())
+}());
