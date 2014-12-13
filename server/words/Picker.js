@@ -41,20 +41,23 @@ var utils = require('util');
 
 		if (words._list.indexOf(str) >= 0) {
 			returned.playerLoses = true;
-			return;
+			returned.word = str;
 		}
 
 		if (options) {
 			if (options._p.length) {
 				nextWord = words._list[options._p[rand][0]];
 			} else {
-				nextWord = getRandomMaxLength(options._w); // _w are words for the computer to lose
+				nextWord = words._list[getRandomMaxLength(options._w)]; // _w are words for the computer to lose
+			}
+			returned.nextLetter = nextWord ? nextWord[str.length] : '';
+			returned.word = nextWord;
+
+			if (words._list.indexOf(str + returned.nextLetter) >= 0) {
+				returned.playerWins = true;
 			}
 		}
-
-		return {
-			nextLetter: nextWord ? nextWord[str.length] : ''
-		};
+		return returned;
 	};
 
 	/**
@@ -92,7 +95,7 @@ var utils = require('util');
 		var i = arr.length;
 
 		while(i--) {
-			if(max<arr[i][1]) {
+			if(max>arr[i][1]) {
 				break;
 			}
 			rands.push(arr[i][0]);

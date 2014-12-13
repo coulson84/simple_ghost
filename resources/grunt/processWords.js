@@ -48,7 +48,6 @@ module.exports = function(grunt) {
 		while (i--) {
 			shorterMatch = false;
 			word = wordList[i]
-
 			if (word.length >= 4) {
 				// all parsed words are added to the waste object - if a shorter word exists as a 
 				// substring of the current string then we don't need to process the word at all
@@ -58,9 +57,13 @@ module.exports = function(grunt) {
 						shorterMatch = true;
 					}
 				}
+
 				if (shorterMatch === false) {
 					waste[word] = true;
 					map(tree, word, tree._list.push(word) - 1, 0);
+					if(/^toil/.test(word)) {
+				console.log(word, tree.t.o.i);
+			}
 				} {}
 			}
 		}

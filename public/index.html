@@ -1,15 +1,72 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="/css/main.css" />	
 </head>
 <body>
 <div id="game">
-	<div id="status"></div>
-	<div id="words"></div>
-	<input id="wordinput" type="hidden" />
+	<div id="messages"></div>
+	<div id="tiles"></div>
+	<input id="hiddenWord" type="hidden" />
+	<table id="controls">
+		<tbody>
+			<tr>
+				<td>
+					<span class="scoreHeader">This Round</span><br>
+					<span id="currScore" class="score">000000000</span>
+				</td>
+				<td>
+					<span class="scoreHeader">Total</span><br>
+					<span id="totalScore" class="score">000000000</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span id="newGame" class="button" data-action="newGame">New Game</span>
+				</td>
+				<td>
+					<span id="resetScore" class="button" data-action="resetScore">Reset Total</span>
+				</td>
+			</tr>
+			<tr class="mobile">
+				<td>
+					<select class="button sel">
+						<option value="a">A</option>
+						<option value="b">B</option>
+						<option value="c">C</option>
+						<option value="d">D</option>
+						<option value="e">E</option>
+						<option value="f">F</option>
+						<option value="g">G</option>
+						<option value="h">H</option>
+						<option value="i">I</option>
+						<option value="j">J</option>
+						<option value="k">K</option>
+						<option value="l">L</option>
+						<option value="m">M</option>
+						<option value="n">N</option>
+						<option value="o">O</option>
+						<option value="p">P</option>
+						<option value="q">Q</option>
+						<option value="r">R</option>
+						<option value="s">S</option>
+						<option value="t">T</option>
+						<option value="u">U</option>
+						<option value="v">V</option>
+						<option value="w">W</option>
+						<option value="x">X</option>
+						<option value="y">Y</option>
+						<option value="z">Z</option>
+					</select>
+				</td>
+				<td>
+					<div class="button" data-action="playerMoveFromSelect">Select</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
-
-<script src="js/Utilities.js"></script>
-<script src="./lib/underscore_1.7.0.js"></script>
+<script src="./js/all.js"></script>
 </body>
 </html>

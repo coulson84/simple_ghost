@@ -17,10 +17,11 @@ var RedisStore = require('connect-redis')(session);
                 prefix: 'sesh'
             })
         }));
+
+        this.app.use(express.static('public'));
 	};
 
 	Server.prototype.start = function(port) {
-		this.app.use(express.static('public'));
 		this.app.listen(port||8001);
 	};
 
