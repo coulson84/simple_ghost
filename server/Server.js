@@ -11,6 +11,8 @@ var RedisStore = require('connect-redis')(session);
             cookie: {
                 maxAge: 28800000 // 8 hours
             },
+            resave: true,
+            saveUninitialized: true,
             store: new RedisStore({
                 host: '127.0.0.1',
                 port: 6379,

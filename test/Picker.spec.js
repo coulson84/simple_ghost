@@ -82,6 +82,9 @@ describe('Picker', function() {
 				p.fetchMatches('a').should.be.a.Object;
 				done();
 			});
+			p.on('loaderror', function(){
+				throw new Error('load error');
+			})
 		});
 
 		it('should return the object that matches the position in the tree according to the string passed to it', function(done){

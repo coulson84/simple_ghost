@@ -61,10 +61,7 @@ module.exports = function(grunt) {
 				if (shorterMatch === false) {
 					waste[word] = true;
 					map(tree, word, tree._list.push(word) - 1, 0);
-					if(/^toil/.test(word)) {
-				console.log(word, tree.t.o.i);
-			}
-				} {}
+				}
 			}
 		}
 
